@@ -12,8 +12,8 @@ const expressJWT = require('express-jwt');
 const bcrypt = require('bcryptjs');
 
 // require our routers
-const adminRouter = require('./routes/admin');
-const userRouter = require('./routes/user');
+// const adminRouter = require('./routes/admin');
+// const userRouter = require('./routes/user');
 // const mealsRouter = require('./routes/meals');
 
 const app = express();
@@ -28,11 +28,11 @@ app.use(bodyParser.json());
 
 // I followed the tutorial put together by Dan Peace to better understand JWTs
 // require secret for all routes except the following:
-app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/', '/favicon.ico', '/css/main.css', '/js/main.js', '/css/main.css.map', '/js/main.js.map', '/admin', '/login', '/admin/login', '/user', '/user/login', '/adminSignUp', '/userSignUp', '/user/displayAll']}));
+// app.use(expressJWT({secret: process.env.SECRET}).unless({path: ['/', '/favicon.ico', '/css/main.css', '/js/main.js', '/css/main.css.map', '/js/main.js.map', '/admin', '/login', '/admin/login', '/user', '/user/login', '/adminSignUp', '/userSignUp', '/user/displayAll']}));
 
 // handle the routes
-app.use('/admin', adminRouter);
-app.use('/user', userRouter);
+// app.use('/admin', adminRouter);
+// app.use('/user', userRouter);
 // app.use('/meals', mealsRouter);
 
 // add an error handler
